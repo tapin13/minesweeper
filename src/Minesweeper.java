@@ -13,6 +13,7 @@ public class Minesweeper extends JFrame {
     final int FIELD_DX = 6;
     final int FIELD_DY = 28;
     final int FIELD_DY_TIMER = 17;
+    int OS_FIELD_SIZE = 0;
     final int MOUSE_BUTTON_LEFT = 1;
     final int MOUSE_BUTTON_RIGHT = 3;
     final int MINES = 10;
@@ -21,17 +22,25 @@ public class Minesweeper extends JFrame {
     int openCells;
     boolean win, bangMine;
     final Canvas canvas;
+    final String OS = System.getProperty("os.name").toLowerCase();
 
     public static void main(String[] args) {
         new Minesweeper();
     }
 
     Minesweeper() {
+        if(OS.startsWith("windows")) {
+            OS_FIELD_SIZE = 11;
+        }
+
+        System.out.println(OS);
+        System.out.println(OS.startsWith("Windows"));
+
         setTitle(TITLE);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setBounds(LOCATION, LOCATION,
-                FIELD_SIZE * BLOCK_SIZE + FIELD_DX,
-                FIELD_SIZE * BLOCK_SIZE + FIELD_DY + FIELD_DY_TIMER);
+                FIELD_SIZE * BLOCK_SIZE + FIELD_DX + OS_FIELD_SIZE,
+                FIELD_SIZE * BLOCK_SIZE + FIELD_DY + OS_FIELD_SIZE + FIELD_DY_TIMER);
         setResizable(false);
         final TimerLabel timerLabel = new TimerLabel();
         timerLabel.setHorizontalAlignment(SwingConstants.CENTER);
