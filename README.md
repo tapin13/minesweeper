@@ -7,6 +7,6 @@ Run,Compiled & Tests under LinuxMint (19)
 ### Run in Windows: minesweeper.bat
 ### Run in Linux: minesweeper.sh
 
-![alt text](https://github.com/tapin13/Minesweeper/blob/master/screenshot.png)
+![alt text](https://raw.githubusercontent.com/tapin13/minesweeper/main/screenshot.png)
 
 Tutorial from https://www.youtube.com/watch?v=xPdrl70ZYnE
